@@ -50,6 +50,13 @@
         .ivory-bg {
             background-color: #fdfcf6;
         }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
     </style>
 </head>
 <body class="antialiased ivory-bg selection:bg-emerald-100 selection:text-emerald-900">
@@ -81,9 +88,8 @@
         <section class="mb-12">
             <div class="bg-white p-2 rounded-2xl shadow-sm border border-emerald-50">
                 <div class="video-container">
-                    <!-- 아래 src 주소의 영상 ID(dQw4w9WgXcQ 등)를 실제 교회 유튜브 영상 ID로 변경하세요 -->
                     <iframe 
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=abcdefghijklmnop" 
+                        src="https://www.youtube.com/embed/zALfAmYy_WQ" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -93,6 +99,21 @@
                 </div>
             </div>
             <p class="text-center text-sm text-emerald-800/50 mt-3"><i class="fa-solid fa-info-circle"></i> 영상을 재생하여 주일 설교를 다시 들으실 수 있습니다.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center gap-2">
+                <i class="fa-solid fa-images text-emerald-600"></i> 설교 슬라이드
+            </h2>
+            <div class="bg-emerald-50/40 p-4 md:p-6 rounded-2xl border border-emerald-100/50 relative">
+                <!-- 스와이프 컨테이너 -->
+                <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 hide-scrollbar" id="slide-container">
+                    <!-- JavaScript를 통해 slide1.png ~ slide27.png가 이곳에 동적으로 자동 삽입됩니다. -->
+                </div>
+                <p class="text-center text-sm text-emerald-800/70 mt-4 font-medium flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrows-left-right animate-pulse"></i> 모바일에서는 좌우로 스와이프하여 넘겨보세요
+                </p>
+            </div>
         </section>
 
         <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-sm border border-emerald-50 mb-12">
@@ -278,6 +299,33 @@
 
             document.body.removeChild(textArea);
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slideContainer = document.getElementById('slide-container');
+            if(slideContainer) {
+                const totalSlides = 27; // 슬라이드 총 개수
+                for(let i = 1; i <= totalSlides; i++) {
+                    const slideWrap = document.createElement('div');
+                    // 스마트폰 화면에서 90% 너비를 차지하게 하여, 다음 슬라이드가 살짝 보이도록 유도(스와이프 힌트)
+                    slideWrap.className = 'snap-center shrink-0 w-[90%] md:w-[70%] bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex items-center justify-center relative aspect-video';
+                    
+                    const img = document.createElement('img');
+                    img.src = `slide${i}.png`; // 깃허브에 올리실 이미지 파일명
+                    img.alt = `설교 슬라이드 ${i}번`;
+                    img.className = 'absolute inset-0 w-full h-full object-cover';
+                    img.loading = 'lazy'; // 화면에 보일 때만 이미지를 다운로드하여 모바일 데이터 절약
+                    
+                    // 이미지가 없을 경우를 대비한 폴백 처리
+                    img.onerror = function() {
+                        this.style.display = 'none';
+                        slideWrap.innerHTML = `<div class="p-10 text-center text-gray-400 flex flex-col items-center justify-center w-full h-full bg-gray-50"><i class="fa-regular fa-image text-4xl mb-2 text-gray-300"></i><span class="text-sm">slide${i}.png<br>준비 중입니다</span></div>`;
+                    };
+
+                    slideWrap.appendChild(img);
+                    slideContainer.appendChild(slideWrap);
+                }
+            }
+        });
     </script>
 </body>
 </html>
