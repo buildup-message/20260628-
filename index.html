@@ -3,324 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주일 묵상: 하나님의 사랑, 헤세드</title>
+    <title>주일 말씀 묵상: 열정을 넘어, 헤세드로</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: { 50: '#fdfcf6', 100: '#f4efe6', 200: '#e8dfcf' },
+                        wood: { light: '#A67B5B', DEFAULT: '#8B5A2B', dark: '#654321' },
+                        emerald: { 50: '#ecfdf5', 600: '#059669', 700: '#047857', 900: '#064e3b' }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        serif: ['"Noto Serif KR"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #fcfbf9;
-            color: #333;
-        }
-        .serif {
-            font-family: 'Noto Serif KR', serif;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #047857 0%, #92400e 100%); /* 초록색에서 우드색으로 */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .wood-text {
-            color: #8B5A2B;
-        }
-        .wood-bg {
-            background-color: #8B5A2B;
-        }
-        .wood-border {
-            border-color: #8B5A2B;
-        }
-        .ivory-bg {
-            background-color: #fdfcf6;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
+        body { background-color: #fdfcf6; color: #333; }
+        .slide-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1rem; padding-bottom: 1rem; -webkit-overflow-scrolling: touch; }
+        .slide-item { flex: 0 0 85%; scroll-snap-align: center; border-radius: 0.75rem; overflow: hidden; background-color: #f3f4f6; border: 1px solid #e8dfcf; }
+        @media (min-width: 768px) { .slide-item { flex: 0 0 60%; } }
     </style>
 </head>
-<body class="antialiased ivory-bg selection:bg-emerald-100 selection:text-emerald-900">
+<body class="selection:bg-emerald-200 selection:text-emerald-900">
 
-    <header class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2 text-emerald-800 font-bold text-lg">
-                <i class="fa-solid fa-church"></i>
-                <span>빌드업 교회 주일 묵상</span>
-            </div>
-            <div class="text-sm text-emerald-900/60 font-medium">
-                2026년 6월 28일
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-ivory-200">
+        <div class="max-w-3xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 text-emerald-800 font-bold text-lg md:text-xl font-serif">
+                <i class="fa-solid fa-church text-wood"></i>
+                <span>빌드업교회 주일 말씀</span>
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
-        
-        <section class="mb-10 text-center">
-            <h3 class="text-emerald-700 font-semibold tracking-wider text-sm mb-2 uppercase">Sunday Message</h3>
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900 serif leading-tight tracking-tight">
-                하나님의 사랑, <span class="gradient-text">헤세드</span>
-                      </p>
-        </section>
-
-        <section class="mb-12">
-            <div class="bg-white p-2 rounded-2xl shadow-sm border border-emerald-50">
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/zALfAmYy_WQ" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-            <p class="text-center text-sm text-emerald-800/50 mt-3"><i class="fa-solid fa-info-circle"></i> 영상을 재생하여 주일 설교를 다시 들으실 수 있습니다.</p>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center gap-2">
-                <i class="fa-solid fa-images text-emerald-600"></i> 설교 슬라이드
-            </h2>
-            <div class="bg-emerald-50/40 p-4 md:p-6 rounded-2xl border border-emerald-100/50 relative">
-                <!-- 스와이프 컨테이너 -->
-                <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 hide-scrollbar" id="slide-container">
-                    <!-- JavaScript를 통해 slide1.png ~ slide27.png가 이곳에 동적으로 자동 삽입됩니다. -->
-                </div>
-                <p class="text-center text-sm text-emerald-800/70 mt-4 font-medium flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-arrows-left-right animate-pulse"></i> 모바일에서는 좌우로 스와이프하여 넘겨보세요
-                </p>
-            </div>
-        </section>
-
-        <section class="bg-white/80 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-sm border border-emerald-50 mb-12">
-            <h2 class="text-xl font-bold mb-4 text-gray-800 flex items-center gap-2">
-                <i class="fa-solid fa-book-open text-emerald-600"></i> 말씀 요약
-            </h2>
-            <div class="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg break-keep">
-                <p>
-                    세상 사람들은 사랑을 흔히 감정이나 조건이라고 오해합니다. 감정은 시간이 지나면 식어버리고, 조건은 채워지지 않으면 사랑받지 못할까 봐 두려움을 줍니다. 하지만 하나님의 사랑은 우리의 지식과 경험을 초월합니다.
-                </p>
-                <p>
-                    구약성경은 이 하나님의 사랑을 <strong>'헤세드(Hesed)'</strong>라고 부릅니다. 이 단어는 우리말로 완벽히 번역할 수 없어 인자, 은혜, 자비 등으로 번역되지만, 그 본질은 <strong>'언약적 사랑'</strong>입니다. 자격 없는 자를 일방적으로 선택하여 약속을 맺고, 자신의 생명을 걸고 끝까지 지켜내는 헌신적인 사랑입니다.
-                </p>
-                <p class="font-medium wood-text bg-amber-50/50 p-5 rounded-xl mt-6 border-l-4 wood-border italic shadow-sm">
-                    "우리가 성경을 연구하고 기도하면서 하나님의 사랑이 얼마나 크고 길고 높고 깊은지 깨달아, 우리 삶이 풍성하게 되기를 바랍니다. 한 주간 헤세드의 사랑을 깊이 묵상합시다."
-                </p>
-            </div>
-        </section>
-
-        <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 serif">매일 묵상: 헤세드의 6가지 특징</h2>
-            <p class="text-emerald-800/60 mt-2 text-sm md:text-base break-keep">월요일부터 토요일까지 하루에 하나씩 묵상해 보세요.</p>
+    <main class="max-w-3xl mx-auto px-4 py-8 space-y-10">
+        <div class="text-center mb-8 px-2">
+            <h1 class="text-2xl md:text-3xl font-bold mb-4 text-gray-900 font-serif leading-tight">
+                열정을 넘어, <span class="text-wood">헤세드로</span>
+            </h1>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed bg-ivory-100 p-5 rounded-2xl">
+                세상의 속박을 깨뜨리는 하나님의 강력한 언약 사랑, '헤세드'의 얼굴을 통해 주일 말씀을 복습합니다.
+            </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <!-- 월요일 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-emerald-100 overflow-hidden flex flex-col">
-                <div class="bg-emerald-50 px-5 py-3 border-b border-emerald-100 flex justify-between items-center">
-                    <span class="font-bold text-emerald-800">월요일</span>
-                    <span class="text-emerald-500 text-sm"><i class="fa-solid fa-seedling"></i></span>
-                </div>
-                <div class="p-5 flex-grow">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">이유 없이 선택하신 사랑</h3>
-                    <p class="text-sm text-emerald-700 mb-4 serif italic">"내가 너를 사랑하기로 결심했기 때문에"</p>
-                    <p class="text-gray-700 text-sm md:text-base leading-relaxed break-keep">
-                        하나님의 사랑은 우리의 외모, 능력, 조건에 있지 않습니다. "내가 너를 사랑하기로 결심했다"는 하나님의 일방적인 선택입니다. 나는 오늘 하나님의 무조건적인 선택을 받은 자녀로서 그 사랑을 누리며 살아가고 있습니까?
-                    </p>
-                </div>
-            </div>
-
-            <!-- 화요일 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-amber-100 overflow-hidden flex flex-col">
-                <div class="bg-amber-50 px-5 py-3 border-b border-amber-100 flex justify-between items-center">
-                    <span class="font-bold wood-text">화요일</span>
-                    <span class="text-amber-500 text-sm"><i class="fa-solid fa-shoe-prints"></i></span>
-                </div>
-                <div class="p-5 flex-grow">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">먼저 찾아오시는 주도적 사랑</h3>
-                    <p class="text-sm wood-text mb-4 serif italic">"우리가 하나님을 사랑한 것이 아니요..."</p>
-                    <p class="text-gray-700 text-sm md:text-base leading-relaxed break-keep">
-                        내 삶의 우연 같은 순간들도 가만히 돌아보면, 나를 부르시고 이 자리에 오기까지 하나님이 먼저 찾아와 내 마음을 움직이신 흔적입니다. 나를 먼저 찾아오신 그 손길을 기억하며 감사하는 하루가 됩시다.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 수요일 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-teal-100 overflow-hidden flex flex-col">
-                <div class="bg-teal-50 px-5 py-3 border-b border-teal-100 flex justify-between items-center">
-                    <span class="font-bold text-teal-800">수요일</span>
-                    <span class="text-teal-500 text-sm"><i class="fa-solid fa-infinity"></i></span>
-                </div>
-                <div class="p-5 flex-grow">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">끝까지 포기하지 않는 사랑</h3>
-                    <p class="text-sm text-teal-700 mb-4 serif italic">"자기 사람들을 사랑하시되 끝까지 사랑하시니라"</p>
-                    <p class="text-gray-700 text-sm md:text-base leading-relaxed break-keep">
-                        하나님의 사랑은 한 번 물면 놓지 않는 진돗개처럼 우리를 '추적하시는' 사랑입니다. 내가 배신하고 도망쳐 저 하늘 별들 사이에 숨을지라도 찾아내시는 그 포기하지 않는 사랑에 나의 삶을 맡깁니다.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 목요일 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-orange-100 overflow-hidden flex flex-col">
-                <div class="bg-orange-50 px-5 py-3 border-b border-orange-100 flex justify-between items-center">
-                    <span class="font-bold text-orange-800">목요일</span>
-                    <span class="text-orange-500 text-sm"><i class="fa-solid fa-anchor"></i></span>
-                </div>
-                <div class="p-5 flex-grow">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">흔들림 없는 한결같은 사랑</h3>
-                    <p class="text-sm text-orange-700 mb-4 serif italic">"우리는 미쁨이 없을지라도 주는 항상 미쁘시니"</p>
-                    <p class="text-gray-700 text-sm md:text-base leading-relaxed break-keep">
-                        우리는 감정과 상황에 따라 요동치고 신실하지 못할 때가 많습니다. 죄책감에 무너질 때도 있습니다. 하지만 하나님은 한결같으십니다. 헤매고 있는 나를 보며 안타까워하시면서도 변함없이 사랑하시는 주님을 바라봅시다.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 금요일 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-lime-100 overflow-hidden flex flex-col">
-                <div class="bg-lime-50 px-5 py-3 border-b border-lime-100 flex justify-between items-center">
-                    <span class="font-bold text-lime-800">금요일</span>
-                    <span class="text-lime-600 text-sm"><i class="fa-solid fa-heart"></i></span>
-                </div>
-                <div class="p-5 flex-grow">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">그럼에도 불구하고의 사랑</h3>
-                    <p class="text-sm text-lime-700 mb-4 serif italic">"음녀가 된 그 여자를 사랑하라 하시기로"</p>
-                    <p class="text-gray-700 text-sm md:text-base leading-relaxed break-keep">
-                        호세아가 끝없이 배신하는 고멜을 품은 것처럼, 하나님은 우리의 배신과 죄악에도 불구하고 우리를 사랑하십니다. 이 헤세드의 사랑을 안다면, 우리 역시 부부 사이에서, 교회 공동체에서 서로를 '그럼에도 불구하고' 사랑해야 합니다.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 토요일 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-stone-200 overflow-hidden flex flex-col">
-                <div class="bg-stone-100 px-5 py-3 border-b border-stone-200 flex justify-between items-center">
-                    <span class="font-bold text-stone-800">토요일</span>
-                    <span class="text-stone-500 text-sm"><i class="fa-solid fa-road"></i></span>
-                </div>
-                <div class="p-5 flex-grow">
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">징계하여 바로잡는 언약 헌신</h3>
-                    <p class="text-sm text-stone-600 mb-4 serif italic">"거친 들로 데리고 가서 말로 위로하고"</p>
-                    <p class="text-gray-700 text-sm md:text-base leading-relaxed break-keep">
-                        사랑하기에 가만히 내버려 두지 않으십니다. 담장을 치고 가시덩굴을 두르며 때로는 광야(사막)로 데려가듯 고난을 허락하십니다. 삶의 고난과 징계 속에서, 나를 바른길로 돌이키시려는 언약적 사랑(헤세드)을 발견하고 신뢰합시다.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <section class="mt-12 mb-8 bg-[#1a3a2a] text-[#fdfcf6] rounded-3xl p-8 text-center shadow-lg relative overflow-hidden">
-            <!-- Background pattern -->
-            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, #fdfcf6 1px, transparent 0); background-size: 24px 24px;"></div>
-            
-            <div class="relative z-10">
-                <h2 class="text-xl font-bold mb-6 text-amber-200">함께 드리는 기도</h2>
-                <p class="serif text-lg md:text-xl leading-loose font-light italic mb-8 break-keep">
-                    "하나님, 저희 인간의 지식으로는 이 크신 사랑을 <br class="hidden md:block">온전히 이해할 수 없습니다.<br>
-                    성령님의 인도하심으로 날마다 <br class="hidden md:block">이 언약의 사랑, 헤세드를 더 깊이 알아가도록 <br class="hidden md:block">저희를 이끌어 주시옵소서.<br>
-                    예수님의 이름으로 기도합니다. 아멘."
-                </p>
-                <button onclick="copyLink()" class="wood-bg hover:bg-amber-900 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 text-sm md:text-base flex items-center gap-2 mx-auto shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-share-nodes"></i> 이 묵상 페이지 공유하기
-                </button>
+        <section class="bg-white rounded-3xl shadow-sm border border-ivory-200 overflow-hidden">
+            <div class="aspect-video w-full bg-gray-100">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/zALfAmYy_WQ" allowfullscreen></iframe>
             </div>
         </section>
 
+        <section>
+            <div class="flex items-center gap-2 mb-4 px-2">
+                <i class="fa-regular fa-images text-emerald-600 text-xl"></i>
+                <h2 class="font-bold text-gray-800 text-lg">설교 슬라이드</h2>
+            </div>
+            <div class="slide-container" id="slide-gallery"></div>
+        </section>
+
+        <section class="bg-white p-6 rounded-3xl border border-emerald-100 shadow-sm">
+            <h2 class="font-bold text-emerald-900 text-lg mb-4 font-serif border-b pb-2">설교 핵심 요약</h2>
+            <div class="text-gray-700 text-sm md:text-base leading-relaxed space-y-4">
+                <p>세상의 사랑은 흔히 '감정'이나 '조건'에 기반합니다. 열정은 1~3년이면 식고, 조건이 사라지면 관계도 무너집니다. 그러나 하나님의 사랑은 세상의 속박을 깨뜨리는 <strong>'헤세드(Hesed)'</strong>, 즉 언약적 사랑입니다.</p>
+                <p>헤세드는 자격 없는 자를 일방적으로 선택하시고, 자기 생명을 걸고 끝까지 지키시는 하나님의 영원한 헌신입니다. 빌드업교회 성도들이 세상의 조건부 사랑을 넘어, 변치 않는 하나님의 언약 사랑 안에 거하기를 소망합니다.</p>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="flex items-center gap-2 mb-6 px-2">
+                <i class="fa-solid fa-seedling text-wood text-xl"></i>
+                <h2 class="font-bold text-gray-800 text-lg font-serif">헤세드의 6가지 얼굴</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
+                    <span class="text-emerald-700 font-bold text-xs">01</span>
+                    <h3 class="font-bold mt-1 text-gray-800">주도적 사랑</h3>
+                    <p class="text-xs text-emerald-600 mb-2 font-medium">'먼저' 찾아오심</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">우리가 아직 반응도 없고 죄 가운데 방황할 때 일방적으로 먼저 건너와 품어주시는 선제적 사랑입니다.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-emerald-600"></div>
+                    <span class="text-emerald-700 font-bold text-xs">02</span>
+                    <h3 class="font-bold mt-1 text-gray-800">영원한 책임</h3>
+                    <p class="text-xs text-emerald-600 mb-2 font-medium">'끝까지' 사랑</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">한 번 피로 산 하나님의 자녀를 역사의 끝, 영원까지 완벽히 품고 마치시는 사랑입니다.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-emerald-700"></div>
+                    <span class="text-emerald-700 font-bold text-xs">03</span>
+                    <h3 class="font-bold mt-1 text-gray-800">흔들림 없는 신실함</h3>
+                    <p class="text-xs text-emerald-600 mb-2 font-medium">'한결같은' 사랑</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">헤세드는 뿌리를 흔들리는 피조물에게 두지 않고, 회전하는 그림자도 없으신 하나님의 성품에 닻을 내린 사랑입니다.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-wood-light/40 shadow-sm relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-wood-light"></div>
+                    <span class="text-wood font-bold text-xs">04</span>
+                    <h3 class="font-bold mt-1 text-gray-800">배신을 이기는 은혜</h3>
+                    <p class="text-xs text-wood mb-2 font-medium">'그럼에도 불구하고'</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">우리가 죄로 눈멀어 주님을 처참히 배반했을지라도, 상처 입으시면서까지 다시 부르시는 인내의 깊이입니다.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-wood-light/40 shadow-sm relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-wood"></div>
+                    <span class="text-wood font-bold text-xs">05</span>
+                    <h3 class="font-bold mt-1 text-gray-800">사랑의 징계</h3>
+                    <p class="text-xs text-wood mb-2 font-medium">바로잡으시는 사랑</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">버려두지 않으시고 끝내 바로잡으시는 것 자체가 '참 자녀'로 받아들이셨다는 가장 분명한 증거입니다.</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-wood-light/40 shadow-sm relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-wood-dark"></div>
+                    <span class="text-wood font-bold text-xs">06</span>
+                    <h3 class="font-bold mt-1 text-gray-800">영원한 약속</h3>
+                    <p class="text-xs text-wood mb-2 font-medium">'언약' 헌신</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">하나님은 전능하신 그분 스스로를 거룩한 법 조문 아래 묶어, 어떤 상황에서도 자기 백성을 버리지 못하게 하셨습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-wood-dark p-6 rounded-3xl text-white shadow-lg">
+            <h2 class="font-bold text-xl mb-4 font-serif flex items-center gap-2">
+                <i class="fa-solid fa-hands-praying"></i> 함께 드리는 기도
+            </h2>
+            <div class="text-ivory-100 text-sm md:text-base leading-relaxed space-y-4 font-light">
+                <p>하나님 아버지, 자격 없는 저희를 먼저 찾아와 주시고 독생자 예수 그리스도를 내어주시기까지 사랑해 주신 그 크신 은혜에 감사합니다.</p>
+                <p>저희의 제한된 지식과 경험으로는 측량할 수 없는 하나님의 언약 사랑을 온전히 다 이해할 수 없음을 고백합니다. 성령님께서 우리의 마음을 여시어, 날마다 그 사랑의 넓이와 길이와 높이와 깊이를 더 깊이 깨달아 알게 하옵소서.</p>
+                <p>세상의 변하는 조건부 사랑에 흔들리지 않게 하시고, 결코 우리를 포기하지 않으시는 흔들림 없는 '헤세드'의 사랑 안에서 참된 평안과 풍성함을 누리게 하옵소서. 나아가 우리도 그 사랑을 본받아 이웃을 품고 사랑하는 빌드업교회 성도들이 되게 하여 주시옵소서.</p>
+                <p class="pt-4 font-bold">예수님의 이름으로 기도합니다. 아멘.</p>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-[#f4efe6] py-10 border-t border-[#e8dfcf]">
-        <div class="max-w-4xl mx-auto px-4 text-center text-amber-900/60 text-sm">
-            <p class="font-medium">© 2026 Build-up Church. All rights reserved.</p>
-            <p class="mt-2 break-keep">하나님의 사랑이 풍성하게 넘치는 한 주 되시기를 바랍니다.</p>
-        </div>
-    </footer>
-
     <script>
-        function copyLink() {
-            const url = window.location.href;
-            
-            // Clipboard API가 지원되는 경우
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(url).then(() => {
-                    alert('묵상 페이지 링크가 복사되었습니다. 카카오톡 등에 공유해 보세요!');
-                }).catch(err => {
-                    fallbackCopyTextToClipboard(url);
-                });
-            } else {
-                // iframe 제약 등으로 Clipboard API가 실패할 경우의 폴백
-                fallbackCopyTextToClipboard(url);
-            }
-        }
-
-        function fallbackCopyTextToClipboard(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            
-            // Avoid scrolling to bottom
-            textArea.style.top = "0";
-            textArea.style.left = "0";
-            textArea.style.position = "fixed";
-
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-
-            try {
-                var successful = document.execCommand('copy');
-                if(successful) {
-                    alert('묵상 페이지 링크가 복사되었습니다. 카카오톡 등에 공유해 보세요!');
-                } else {
-                    alert('링크 복사에 실패했습니다. 주소창의 링크를 직접 복사해 주세요.');
-                }
-            } catch (err) {
-                alert('링크 복사에 실패했습니다. 주소창의 링크를 직접 복사해 주세요.');
-            }
-
-            document.body.removeChild(textArea);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const slideContainer = document.getElementById('slide-container');
-            if(slideContainer) {
-                const totalSlides = 27; // 슬라이드 총 개수
-                for(let i = 1; i <= totalSlides; i++) {
-                    const slideWrap = document.createElement('div');
-                    // 스마트폰 화면에서 90% 너비를 차지하게 하여, 다음 슬라이드가 살짝 보이도록 유도(스와이프 힌트)
-                    slideWrap.className = 'snap-center shrink-0 w-[90%] md:w-[70%] bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex items-center justify-center relative aspect-video';
-                    
-                    const img = document.createElement('img');
-                    img.src = `slide${i}.png`; // 깃허브에 올리실 이미지 파일명
-                    img.alt = `설교 슬라이드 ${i}번`;
-                    img.className = 'absolute inset-0 w-full h-full object-cover';
-                    img.loading = 'lazy'; // 화면에 보일 때만 이미지를 다운로드하여 모바일 데이터 절약
-                    
-                    // 이미지가 없을 경우를 대비한 폴백 처리
-                    img.onerror = function() {
-                        this.style.display = 'none';
-                        slideWrap.innerHTML = `<div class="p-10 text-center text-gray-400 flex flex-col items-center justify-center w-full h-full bg-gray-50"><i class="fa-regular fa-image text-4xl mb-2 text-gray-300"></i><span class="text-sm">slide${i}.png<br>준비 중입니다</span></div>`;
-                    };
-
-                    slideWrap.appendChild(img);
-                    slideContainer.appendChild(slideWrap);
-                }
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.getElementById('slide-gallery');
+            for (let i = 1; i <= 27; i++) {
+                const div = document.createElement('div');
+                div.className = 'slide-item shrink-0';
+                const img = document.createElement('img');
+                img.src = `slide${i}.png`;
+                img.onerror = () => { img.src = `https://placehold.co/800x450/e8dfcf/8B5A2B?text=Slide+${i}`; };
+                img.loading = 'lazy';
+                div.appendChild(img);
+                gallery.appendChild(div);
             }
         });
     </script>
